@@ -13,7 +13,7 @@ exports.getEvents = function() {
 exports.createEvent = function(eventData) {
   return new Promise((resolve, reject) => {
     if (!eventData) return reject('Missing fields')
-    eventDB.saveevent(eventData)
+    eventDB.saveEvent(eventData)
     .then(event => resolve(event))
     .catch(err => reject(err))
   })

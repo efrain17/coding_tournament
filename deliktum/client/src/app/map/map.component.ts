@@ -91,9 +91,20 @@ export class MapComponent implements OnInit {
   markers: any;
 
 
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventService) { 
+    this.eventService.getEvents()
+    .then(markers => {
+      this.markers = markers.map(maker => {
+        maker.latitude = parseFloat(maker.latitude);
+        maker.longitude = parseFloat(maker.longitude);
+        return maker;
+      });
+      console.log(this.markers);
+    });
+  }
+
   ngOnInit() {
-    this.markers = this.eventService.getEvents();
+    
   }
 
 }

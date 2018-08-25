@@ -8,8 +8,11 @@ import { FooterComponent } from './footer/footer.component';
 import { EventComponent } from './event/event.component';
 import { AgmCoreModule } from '@agm/core';
 import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 
+import { EventService } from './event.service';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,15 @@ import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
     EventComponent
   ],
   imports: [
+    HttpClientModule,
+    HttpModule,
     BrowserModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDOAO2_i3zixBUPIv7TU5HPV5xJt4374hU'
     }),
     AgmJsMarkerClustererModule
   ],
-  providers: [],
+  providers: [EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

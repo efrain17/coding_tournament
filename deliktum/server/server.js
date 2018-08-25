@@ -16,10 +16,10 @@ db_tools.DBConnectMongoose()
   app.use(bodyparser.urlencoded({extended: true}))
   app.use(bodyparser.json({limit: '10mb'}))
 
-  app.use('/', express.static(__dirname + '/../client/dist'))
+  app.use('/', express.static(__dirname + '/../client/dist/client'))
   app.all('/app/*', (req, res) => {
 	res.status(200).sendFile(
-	path.join(__dirname, '/../client/dist/index.html'))
+	path.join(__dirname, '/../client/dist/client/index.html'))
   })
 
   routes.assignRoutes(app)

@@ -1,7 +1,7 @@
 # README #
 
 ### Descripción del Proyecto
-* Sistema SAS COUNT de Facturación e Inventario
+* Sistema de reportes de eventos catastroficos
 * Desarrollado en Angular y Node.js
 * Base de datos MongoDB
 * Clear arquitecture + hexagonal arquitecture
@@ -27,3 +27,7 @@
 
 * Dueño o administrador de Repo: carlosefrain17@hotmail.com
 * Otro contacto de la comunidad o del equipo 
+
+### ¿Como lo ejecuto? ###
+* cd /server/
+* npm start

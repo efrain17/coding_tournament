@@ -28,7 +28,7 @@ exports.saveEvent = function(eventData) {
   })
 }
 
-exports.getEvent = function(eventIds) {
+exports.getEvents = function(eventIds) {
   return new Promise((resolve, reject) => {
     Event.find({})
     .then(event => resolve(event))
