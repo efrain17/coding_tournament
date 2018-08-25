@@ -1,4 +1,3 @@
-/// <reference types="@types/googlemaps" />
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 
@@ -88,29 +87,19 @@ export class MapComponent implements OnInit {
       stylers: [{color: '#17263c'}]
     }
   ];
+  title: string = 'My first AGM project';
+  lat: number = 51.678418;
+  lng: number = 7.809007;
+
+  markers: any =  [
+    { lat: 28.4685, lng: 77.0056, toolTip: 'Here too' },
+    { lat: 28.4795, lng: 77.0276, toolTip: 'Here too' },
+    { lat: 28.4605, lng: 77.0546, toolTip: 'Here too' }
+  ]
+
 
   constructor() { }
-
-  @ViewChild('googleMap') gmapElement: any;
-  map: google.maps.Map;
   ngOnInit() {
-    var mapProp = {
-    center: new google.maps.LatLng(28.4595, 77.0266),
-    zoom: 14,
-    // mapTypeId: google.maps.MapTypeId.ROADMAP
-    styles: this.styles
-    // mapTypeId: google.maps.MapTypeId.SATELLITE
-    // mapTypeId: google.maps.MapTypeId.TERRAIN
-    };
-
-    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
-    var marker = new google.maps.Marker({ position: mapProp.center });
-    marker.setMap(this.map);
-
-    var infowindow = new google.maps.InfoWindow({
-    content: 'Hey, We are here'
-    });
-    infowindow.open(this.map, marker);
   }
 
 }

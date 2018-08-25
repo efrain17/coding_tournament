@@ -1,1 +1,5 @@
-<div #googleMap class="map mx-1"></div>
+<agm-map class="map"  [latitude]="51.673858" [longitude]="7.815982" [styles]="styles">
+  <agm-marker-cluster [imagePath]="'https://googlemaps.github.io/js-marker-clusterer/images/m'">
+    <agm-marker *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng"></agm-marker>
+  </agm-marker-cluster>
+</agm-map>
