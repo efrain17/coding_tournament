@@ -38,7 +38,7 @@ export class EventService {
     return this.http.get(url)
     .toPromise()
     .then((response: Response) => {
-      return response.json() ? response.json() : this.eventsDefaul;
+      return response.json().length ? response.json() : this.eventsDefaul;
     })
     .catch(this.error);
   }
