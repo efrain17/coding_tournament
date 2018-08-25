@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-
+import { EventService } from '../event.service';
 
 @Component({
   selector: 'app-map',
@@ -87,19 +87,13 @@ export class MapComponent implements OnInit {
       stylers: [{color: '#17263c'}]
     }
   ];
-  title: string = 'My first AGM project';
-  lat: number = 51.678418;
-  lng: number = 7.809007;
 
-  markers: any =  [
-    { lat: 28.4685, lng: 77.0056, toolTip: 'Here too' },
-    { lat: 28.4795, lng: 77.0276, toolTip: 'Here too' },
-    { lat: 28.4605, lng: 77.0546, toolTip: 'Here too' }
-  ]
+  markers: any;
 
 
-  constructor() { }
+  constructor(private eventService: EventService) { }
   ngOnInit() {
+    this.markers = this.eventService.getEvents();
   }
 
 }

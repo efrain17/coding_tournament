@@ -1,5 +1,5 @@
-let db_tools = require('../tools/db_tools');
-let mongoose = require('mongoose');
+let db_tools = require('../tools/db_tools')
+let mongoose = require('mongoose')
 
 let UserSchema = new mongoose.Schema({
   email: { type: String, index: true, unique: true },
@@ -10,25 +10,25 @@ let UserSchema = new mongoose.Schema({
   genero: String,
   celular: String,
   ubicacion: String
-});
+})
 // autor: { type: Schema.ObjectId, ref: "Autor" } 
 
-let User = mongoose.model('user', UserSchema);
-exports.User = User;
+let User = mongoose.model('user', UserSchema)
+exports.User = User
 
 exports.saveUser = function(userData) {
-  let user = new User(userData);
+  let user = new User(userData)
   
   return new Promise((resolve, reject) => {
     user.save()
     .then(user => {
-      console.log("User saved!");
-      resolve(user);
+      console.log("User saved!")
+      resolve(user)
     })
     .catch(err => {
-      console.log("Error saving user: " + err);
-      reject(err);
-    });
+      console.log("Error saving user: " + err)
+      reject(err)
+    })
   })
 }
 
@@ -38,7 +38,7 @@ exports.getUsers = function(userIds) {
     .then(users => resolve(users))
     .catch(err => {
         console.log('error: ' + err)
-        reject(err);
+        reject(err)
     })
   })
 }
