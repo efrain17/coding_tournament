@@ -5,13 +5,18 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MapComponent } from './map/map.component';
 import { FooterComponent } from './footer/footer.component';
+import { EventComponent } from './event/event.component';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MapComponent,
-    FooterComponent
+    FooterComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule
